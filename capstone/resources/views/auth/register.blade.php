@@ -12,8 +12,8 @@
                         <form action="{{ route('validate_register') }}" method="post">
                             @csrf
                             <div class="icon1">
-                                <x-label for="username" :value="__('Username')" /><x-name/>
-                                <x-input type="name" name="username" :value="old('username')" />
+                                <x-label for="name" :value="__('Username')" /><x-name/>
+                                <x-input type="name" name="name" :value="old('name')" />
                             </div>
                             <div class="icon1">
                                 <x-label for="email" :value="__('Email')" /><x-email/>
@@ -30,21 +30,15 @@
                             <div class="icon1">
                                 <x-label for="usertype" :value="__('User Type')" />
                                 <select name="usertype">
-                                    <option value="tenant">Tenant</option>
-                                    <option value="landlord">Landlord</option>
+                                    <option value="tenant">{{ __('Tenant') }}</option>
+                                    <option value="landlord">{{ __('Landlord') }}</option>
                                 </select>
-                            </div>
-                            <div class="login-check">
-                                <label class="checkbox">
-                                    <input type="checkbox" name="checkbox" checked="">
-                                    <i></i>{{ __('Remember me') }}
-                                </label>
                             </div>
                             <div class="bottom">
                                 <button class="btn">{{ __('Register') }}</button>
                             </div>
                             <div class="links">
-                                <p><a href="#">{{ __('Forgot your password?') }}</a></p>
+                                <p><a href="#"></a></p>
                                 <p class="right"><a href="{{ route('login') }}">{{ __('New User? Register') }}</a></p>
                                 <div class="clear"></div>
                             </div>

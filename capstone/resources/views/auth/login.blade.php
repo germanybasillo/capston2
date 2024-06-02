@@ -20,7 +20,7 @@
                                 <x-input type="password" name="password" />
                             </div>
                             <div class="login-check">
-                                <label class="checkbox">
+                                <label class="checkbox  ">
                                     <input type="checkbox" name="checkbox" checked="">
                                     <i></i>{{ __('Remember me') }}
                                 </label>

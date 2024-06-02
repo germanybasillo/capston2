@@ -1,12 +1,12 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
+
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use App\Models\User;
-
 
 class LoginRegister extends Controller
 {
@@ -15,7 +15,6 @@ class LoginRegister extends Controller
         return view('auth.login');
     }
 
-    
     public function validate_login(Request $request)
     {
         $request->validate([
@@ -26,18 +25,14 @@ class LoginRegister extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            return redirect()->route('landingpage');
+            return redirect()->route('home');
         }
 
-        return redirect()->route('/')->with('error', 'Login details are not valid');
+        return redirect()->route('login')->with('error', 'Login details are not valid');
     }
-
 
     public function register()
     {
-        // if (Auth::check()) {
-        //     return redirect()->route('/landingpage');
-        // }
         return view('auth.register');
     }
 
@@ -46,18 +41,20 @@ class LoginRegister extends Controller
         $request->validate([
             'name'     => 'required',
             'email'    => 'required|email|unique:users',
-            'password' => 'required|min:8|confirmed'
+            'password' => 'required|min:8|confirmed',
+            'user_type' => 'required|in:tenant,landlord',
         ]);
         
         $data = $request->all();
 
-        $user = User::create([
-            'name'     => $data['name'],
-            'email'    => $data['email'],
-            'password' => Hash::make($data['password'])
-        ]);
+        $user = new User();
+        $user->name = $data['name'];
+        $user->email = $data['email'];
+        $user->password = Hash::make($data['password']);
+        $user->user_type = $data['user_type'];
+        $user->save();
 
         Auth::login($user);
-        return redirect()->route('/login')->with('success', 'Registration completed. Welcome to the dashboard!');
+        return redirect()->route('home')->with('success', 'Registration completed. Welcome to the dashboard!');
     }
 }
