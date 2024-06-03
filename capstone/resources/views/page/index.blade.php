@@ -31,6 +31,17 @@
       <div class="sidebar">
         <nav class="mt-2">
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            
+            @guest 
+            <li class="nav-item">
+                <a href="landingpage" class="nav-link">
+                  <i class="nav-icon fa fa-tachometer-alt"></i>
+                  <p>
+                  {{_('Dashboard')}}
+                  </p>
+                </a>
+              </li>
+            @endguest 
 
             @if(Auth::check())
          @if(Auth::user()->usertype === 'tenant')
@@ -149,7 +160,7 @@
               </a>
             </li>
           </ul>
-          
+
           @elseif(Auth::user()->usertype === 'landlord')
 
 
