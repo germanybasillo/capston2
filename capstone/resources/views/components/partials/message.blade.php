@@ -6,7 +6,7 @@
 @endif
 
 @if($message = Session::get('bypass'))
-<div class="alert alert-info">
+<div class="alert alert-info" style="width:14%;border-radius:30px;margin:auto;text-align:center">
 {{ $message }}
 </div>
 @endif

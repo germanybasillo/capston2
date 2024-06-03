@@ -31,7 +31,10 @@
       <div class="sidebar">
         <nav class="mt-2">
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          
+
+            @if(Auth::check())
+         @if(Auth::user()->usertype === 'tenant')
+
             <li class="nav-item">
               <a href="landingpage" class="nav-link">
                 <i class="nav-icon fa fa-tachometer-alt"></i>
@@ -146,6 +149,35 @@
               </a>
             </li>
           </ul>
+          
+          @elseif(Auth::user()->usertype === 'landlord')
+
+
+          <li class="nav-item">
+            <a href="landingpage" class="nav-link">
+              <i class="nav-icon fa fa-tachometer-alt"></i>
+              <p>
+              {{_('Dashboard')}}
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/tenants" class="nav-link">
+              <i class="nav-icon fa fa-users"></i>
+              <p>
+                  {{_('Tenants Profile')}}
+              </p>
+            </a>
+          </li>
+
+          @endif
+          @endif
+
         </nav>
       </div>
 </x-app-layout>
+
+
+
+
+
