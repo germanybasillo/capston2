@@ -150,7 +150,7 @@
       <a href="/tenants" class="nav-link">
         <i class="nav-icon fa fa-users"></i>
         <p>
-            {{_('Tenants Profile')}}
+            {{_('Tenants')}}
         </p>
       </a>
     </li>
