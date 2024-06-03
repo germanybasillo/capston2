@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginRegister;
 use App\Http\Controllers\Page\LinkController;
+use App\Http\Controllers\Usertype\Dashboard;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -17,3 +18,5 @@ Route::get('/logout',  [LoginRegister::class, 'logout'])->name('logout');
 
 
 Route::get('/index', [LinkController::class, 'index'])->name('index');
+
+Route::get('/landlord', [Dashboard::class, 'landlord'])->name('landlord');

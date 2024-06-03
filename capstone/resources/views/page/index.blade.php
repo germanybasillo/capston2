@@ -31,7 +31,7 @@
       <div class="sidebar">
         <nav class="mt-2">
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-            
+
             @guest 
             <li class="nav-item">
                 <a href="landingpage" class="nav-link">
@@ -47,7 +47,7 @@
          @if(Auth::user()->usertype === 'tenant')
 
             <li class="nav-item">
-              <a href="landingpage" class="nav-link">
+              <a href="{{route('tenant')}}" class="nav-link">
                 <i class="nav-icon fa fa-tachometer-alt"></i>
                 <p>
                 {{_('Dashboard')}}
@@ -165,7 +165,7 @@
 
 
           <li class="nav-item">
-            <a href="landingpage" class="nav-link">
+            <a href="{{ route('landlord')}}" class="nav-link">
               <i class="nav-icon fa fa-tachometer-alt"></i>
               <p>
               {{_('Dashboard')}}
