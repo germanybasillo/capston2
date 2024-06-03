@@ -9,7 +9,7 @@
                     </x-slot>
                     <h1 style="margin-top: -30px">{{_('REGISTER')}}</h1>
                     <div class="header-left-bottom">
-                        <form action="{{ route('validate_register') }}" method="post">
+                        <form action="{{ route('validate_register') }}" method="POST">
                             @csrf
                             <div class="icon1">
                                 <x-label for="name" :value="__('Username')" /><x-name/>

@@ -7,6 +7,7 @@
                             </a>
                         </div>
                     </x-slot>
+                    <x-partials.message/>
                     <h1 style="margin-top: -30px">{{_('LOGIN')}}</h1>
                     <div class="header-left-bottom">
                         <form action="{{ route('validate_login') }}" method="post">

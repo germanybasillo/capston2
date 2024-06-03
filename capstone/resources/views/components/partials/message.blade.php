@@ -11,8 +11,10 @@
 @endif
 
 
-@if($message = Session::get('fail'))
+<div style="margin-left:60px;color:red"><br>
+@if($message = Session::get('error'))
 <div class="alert alert-danger">
 {{ $message }}
 </div>
 @endif
+</div>
