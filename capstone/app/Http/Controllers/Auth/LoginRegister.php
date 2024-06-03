@@ -12,6 +12,9 @@ class LoginRegister extends Controller
 {
     public function login()
     {
+        if (Auth::check()) {
+            return redirect()->route('index')->with('bypass', 'You are already logged in.');
+        }
         return view('auth.login');
     }
 
@@ -38,6 +41,9 @@ class LoginRegister extends Controller
 
     public function register()
     {
+        if (Auth::check()) {
+            return redirect()->route('index')->with('bypass', 'You are already logged in.');
+        }
         return view('auth.register');
     }
 

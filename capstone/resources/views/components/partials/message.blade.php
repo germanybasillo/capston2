@@ -1,8 +1,16 @@
+
 @if($message = Session::get('success'))
-<div class="alert alert-success">
+<div class="alert alert-success" style="width:14%;border-radius:30px;margin:auto;text-align:center">
 {{ $message }}
 </div>
 @endif
+
+@if($message = Session::get('bypass'))
+<div class="alert alert-info">
+{{ $message }}
+</div>
+@endif
+
 
 @if($message = Session::get('info'))
 <div class="alert alert-info">
