@@ -1,6 +1,3 @@
-
-
-
 <x-app-layout>
     <x-slot name="header">
         <x-partials.header/>
@@ -35,7 +32,7 @@
             <!-- jquery validation -->
             <div class="card card-success">
               <!-- form start -->
-              <form role="form" id="quickForm" action="{{route('tenants.edit',$tenant->id)}}" method="POST">
+              <form role="form" id="quickForm" action="{{ route('tenants.update', $tenant->id) }}" method="POST">
                 @csrf
                 @method('PUT')
                 <div class="card-body">

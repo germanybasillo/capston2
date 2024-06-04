@@ -37,6 +37,7 @@
         <x-partials.message/>
         {{$header}}
     </nav>
+    {{$content}}
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         {{$slot}}
     </aside>

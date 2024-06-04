@@ -39,35 +39,41 @@
                   <div class="col-md-4">
                   <div class="form-group">
                     <label>Last Name</label>
-                    <input type="text" name="lname" class="form-control" placeholder="Last Name">
+                    <input type="text" name="lname" class="form-control" placeholder="Last Name" value="{{ old('lname') }}">
+                    <x-validation.lname/>
                   </div></div>
                   <div class="col-md-4">
                   <div class="form-group">
                     <label>First Name</label>
-                    <input type="text" name="fname" class="form-control" placeholder="First Name">
+                    <input type="text" name="fname" class="form-control" placeholder="First Name" value="{{ old('fname') }}">
+                    <x-validation.fname/>
                   </div></div>
                   <div class="col-md-4">
                   <div class="form-group">
                     <label>Middle Name</label>
-                    <input type="text" name="mname" class="form-control" placeholder="Middle Name">
+                    <input type="text" name="mname" class="form-control" placeholder="Middle Name" value="{{ old('mname') }}">
+                    <x-validation.mname/>
                   </div>
                   </div>
                   <div class="col-md-12">
                   <div class="form-group">
                     <label>Address</label>
-                    <textarea  class="form-control" name="address" placeholder="ex. Manggahan, Pasig City, Manila"></textarea>
+                    <textarea  class="form-control" name="address" placeholder="ex. Manggahan, Pasig City, Manila" value="{{ old('address') }}"></textarea>
+                    <x-validation.address/>
                   </div>
                   </div>
                   <div class="col-md-4">
                   <div class="form-group">
                     <label>Email</label>
-                    <input type="email" name="email" class="form-control" placeholder="ex. email@gmail.com">
+                    <input type="email" name="email" class="form-control" placeholder="ex. email@gmail.com" value="{{ old('email') }}">
+                    <x-validation.email/>
                   </div>
                   </div>
                   <div class="col-md-4">
                   <div class="form-group">
                     <label>Contact</label>
-                    <input type="text" name="contact" class="form-control" placeholder="ex. 09654645341">
+                    <input type="text" name="contact" class="form-control" placeholder="ex. 09654645341" value="{{ old('contact') }}">
+                    <x-validation.contact/>
                   </div>
                   </div>
                   <div class="col-md-4">
@@ -82,7 +88,8 @@
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Profile</label>
-                    <input type="file" name="profile" class="form-control">
+                    <input type="file" name="profile" class="form-control" value="{{ old('profile') }}">
+                    <x-validation.profile/>
                   </div>
                 </div>
                 <!-- /.card-body -->

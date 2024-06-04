@@ -28,7 +28,7 @@
               <!-- small box -->
               <div class="small-box bg-info">
                 <div class="inner">
-                  {{-- <h3>{{$tenants}}</h3> --}}
+                  <h3>{{$tenants}}</h3>
 
                   <p>Number of Tenants</p>
                 </div>

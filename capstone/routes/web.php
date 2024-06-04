@@ -17,8 +17,8 @@ Route::get('/logout',  [LoginRegister::class, 'logout'])->name('logout');
 Route::get('/index', [LinkController::class, 'index'])->name('index');
 Route::get('/landlord', [Dashboard::class, 'landlord'])->name('landlord');
 Route::get('/tenant', [Dashboard::class, 'tenant'])->name('tenant');
-Route::get('/tenants',  [TenantLink::class, 'getAll']);
-Route::get('/tenants/{id}',  TenantLink::class .'@edit')->name('tenants.edit');
-Route::post('/tenant-store',[TenantLink::class, 'store']);
-Route::put('/tenants/{id}',[TenantLink::class, 'update'])->name('tenants.update');
-Route::delete('/tenants/{id}',TenantLink::class .'@destroy')->name('tenants.destroy');
+
+Route::resource('tenants', TenantLink::class);
+Route::post('tenant-store', [TenantLink::class, 'store'])->name('tenant-store');
+Route::put('tenants/{id}', [TenantLink::class, 'update'])->name('tenants.update');
+

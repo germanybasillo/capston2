@@ -17,7 +17,7 @@
                    <li class="breadcrumb-item active">Tenants</li>
                 </ol>
              </div>
-             <a class="btn btn-sm elevation-2" href="/addtenant" style="margin-top: 20px;margin-left: 10px;background-color: #05445E;color: #ddd;"><i
+             <a class="btn btn-sm elevation-2" href="/tenants/create" style="margin-top: 20px;margin-left: 10px;background-color: #05445E;color: #ddd;"><i
                    class="fa fa-user-plus"></i>
                 Add New</a>
           </div>
