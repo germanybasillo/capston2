@@ -88,7 +88,7 @@
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Profile</label>
-                    <input type="file" name="profile" class="form-control" value="{{ old('profile') }}">
+                    <input type="file" name="profile" class="form-control" accept=".jpg,.jpeg,.png,.gif" value="{{ old('profile') }}">
                     <x-validation.profile/>
                   </div>
                 </div>

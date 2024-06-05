@@ -60,11 +60,16 @@
  <script src="../assets/tables/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
  <script src="../assets/tables/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
  <script src="../assets/tables/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+
 <script>
     $(function () {
        $("#example1").DataTable();
     });
  </script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 </html>

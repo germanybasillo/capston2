@@ -56,10 +56,11 @@ class TenantLink extends Controller
                 'fname' => 'required|string',
                 'lname' => 'required|string',
                 'mname' => 'required|string',
-                'email' => 'required|email|unique',
-                'contact' => 'required|string',
+                'email' => 'required|email|unique:tenants,email,' . $id,
+                'contact' => 'required|string|unique:tenants,contact,' . $id,
                 'address' => 'required|string',
                 'gender' => 'required|string',
+                'profile' => 'required'
             ]
         );
         

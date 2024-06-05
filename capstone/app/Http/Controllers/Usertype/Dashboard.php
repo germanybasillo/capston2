@@ -12,10 +12,12 @@ class Dashboard extends Controller
     
   return view("dashboard.landlord",[
     'tenants' => Tenant::count(),
+  
+
   ]);
   
   }
   public function tenant(){
-    return view("dashboard.tenant");
+    
     }
 }

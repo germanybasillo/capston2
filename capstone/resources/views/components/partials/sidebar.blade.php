@@ -137,12 +137,11 @@
 
     @elseif(Auth::user()->usertype === 'landlord')
 
-
     <li class="nav-item">
       <a href="{{ route('landlord')}}" class="nav-link">
         <i class="nav-icon fa fa-tachometer-alt"></i>
         <p>
-        {{_('Dashboard')}}
+          {{ __('Dashboard') }}{{--({{$tenants}}) --}}
         </p>
       </a>
     </li>

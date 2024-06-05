@@ -83,7 +83,7 @@
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Profile</label>
-                    <input type="file" name="profile" class="form-control" value="{{$tenant->profile}}">
+                    <input type="file" name="profile" class="form-control" accept=".jpg,.jpeg,.png,.gif" value="{{$tenant->profile}}">
                   </div>
                 </div>
                 <!-- /.card-body -->

@@ -13,7 +13,7 @@
              </div>
              <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                   <li class="breadcrumb-item"><a href="#">Home</a></li>
+                   <li class="breadcrumb-item"><a href="/index">Home</a></li>
                    <li class="breadcrumb-item active">Tenants</li>
                 </ol>
              </div>
@@ -40,25 +40,21 @@
                    <tbody>
                      @foreach ($tenants as $tenant)
                       <tr>
-                         <td><img src="../assets/img/profile.png" width="50" alt="User Image"></td>
+                         <td>{{$tenant->profile}}</td>
                          <td>
                             <p class="info">Name: <b>{{$tenant->fname." ".$tenant->mname." ".$tenant->lname}}</b></p>
                             <p class="info"><small>Contact: <b>{{$tenant->contact}}</b></small></p>
                             <p class="info"><small>Email: <b>{{$tenant->email}}</b></small></p>
+                            <p class="info"><small>Gender: <b>{{$tenant->gender}}</b></small></p>
                          </td>
                          <td>{{$tenant->address}}</td>
                          <td class="text-right">
                             <a class="btn btn-sm btn-success" href="/tenants/{{$tenant->id}}" data-toggle="modal" data-target="#edit"><i
                                   class="fa fa-user-edit"></i></a>
-                           <form action="{{ route('tenants.destroy', $tenant->id) }}" method="post">
-                              @csrf
-                              @method('DELETE')
-                              <button class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete"><i
-                                  class="fa fa-trash-alt"></i></button>
-                           </form>
+                           {{-- <a class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete"><i class="fa fa-trash-alt"></i></a> --}}
+                           <a class="btn btn-sm btn-danger" data-toggle="modal" data-target="#deleteModal"><i class="fa fa-trash-alt"></i></a>
                          </td>
                       </tr>
-                     @endforeach
                    </tbody>
                 </table>
              </div>
@@ -67,19 +63,24 @@
     </section>
  </div>
 </div>
-<div id="delete" class="modal animated rubberBand delete-modal" role="dialog">
- <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-       <div class="modal-body text-center">
-          <img src="../assets/img/sent.png" alt="" width="50" height="46">
-          <h3>Are you sure want to delete this Operator?</h3>
-          <div class="m-t-20">
-             <a href="#" class="btn btn-white" data-dismiss="modal">Close</a>
-             <button type="submit" class="btn btn-danger">Delete</button>
-          </div>
+<div id="deleteModal" class="modal animated rubberBand delete-modal" role="dialog">
+   <div class="modal-dialog modal-dialog-centered">
+       <div class="modal-content">
+           <form id="deleteForm" action="{{ route('tenants.destroy', $tenant->id) }}" method="post">
+               @csrf
+               @method('DELETE')
+               <div class="modal-body text-center">
+                   <img src="{{ asset('style_account/images/logo.png') }}" alt="asd" width="50" height="46">
+                   <h3>Are you sure you want to delete this Operator?</h3>
+                   <div class="m-t-20">
+                       <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+                       <button type="submit" class="btn btn-danger">Delete</button>
+                   </div>
+               </div>
+           </form>
        </div>
-    </div>
- </div>
+       @endforeach
+   </div>
 </div>
 </x-slot>
 
