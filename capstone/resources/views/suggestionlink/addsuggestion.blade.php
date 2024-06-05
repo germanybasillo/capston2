@@ -11,7 +11,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">New Suggestion</h1>
+            <h1 class="m-0 text-dark"><span class="fa fa-lightbulb"></span> New Suggestion</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -47,12 +47,28 @@
                         </select>
                   </div></div>
                   <div class="col-md-8 offset-md-2">
-                  <div class="form-group">
-                    <label>Description</label>
-                    <textarea  class="form-control" name="description" placeholder="ex. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet"></textarea>
-                    <x-validation.description/>
-                  </div></div>
-                
+                    <div class="form-group">
+                      <label>Suggestion</label>
+                      <input type="suggestion" name="suggestion" class="form-control" placeholder="Your Text">
+                    </div></div>
+                    <div class="col-md-8 offset-md-2">
+                        <div class="form-group">
+                          <label>Date</label>
+                    <input type="date" name="date" class="form-control" placeholder="ex. 6000.00">
+                    </div></div>
+                    <div class="col-md-8 offset-md-2">
+                        <div class="form-group">
+                          <label>Date</label>
+                    <input type="reply" name="reply" class="form-control" placeholder="Reply.......">
+                    </div></div>
+                    <div class="col-md-8 offset-md-2">
+                        <div class="form-group">
+                          <label>Status</label>
+                          <select class="form-control" name="status">
+                            <option>Solve</option>
+                            <option>Pending</option>
+                        </select>
+                    </div></div>
 
                 </div>
                 <!-- /.card-body -->

@@ -9,7 +9,7 @@ class Suggestion extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'name',
+        'email',
         'suggestion',
         'date',
         'reply',
