@@ -16,9 +16,9 @@
                            <li class="breadcrumb-item active">Rooms</li>
                         </ol>
                      </div>
-                     <a class="btn btn-sm elevation-2" href="/rooms/create" style="margin-top: 20px;margin-left: 10px;background-color: #05445E;color: #ddd;"><i
-                           class="fa fa-user-plus"></i>
-                        Add New</a>
+                     <a class="btn btn-sm elevation-2" href="/rooms/create" style="margin-top: 20px;margin-left: 10px;background-color: #05445E;color: #ddd;">
+                        <i class="fa fa-user-plus"></i> Add New
+                     </a>
                   </div>
                </div>
             </div>
@@ -41,14 +41,37 @@
                               <tr>
                                  <td>{{$room->number}}</td>
                                  <td>{{$room->description}}</td>
-                                 <td>{{$room->roompic}}</td>
+                                 <td><img src="{{ asset('path/to/images/' . $room->roompic) }}" alt="Room Image" width="50" height="50"></td>
                                  <td class="text-right">
-                                    <a class="btn btn-sm btn-success" href="/rooms/{{$room->id}}"><i
-                                          class="fa fa-edit"></i></a>
-                                    <a class="btn btn-sm btn-danger" data-toggle="modal" data-target="#deleteModal"><i class="fa fa-trash-alt"></i></a>
+                                    <a class="btn btn-sm btn-success" href="/rooms/{{$room->id}}">
+                                       <i class="fa fa-edit"></i>
+                                    </a>
+                                    <a class="btn btn-sm btn-danger" data-toggle="modal" data-target="#deleteModal{{$room->id}}">
+                                       <i class="fa fa-trash-alt"></i>
+                                    </a>
                                  </td>
                               </tr>
-                              @endforeach
+
+                              <!-- Delete Modal -->
+                              <div id="deleteModal{{$room->id}}" class="modal animated rubberBand delete-modal" role="dialog">
+                                  <div class="modal-dialog modal-dialog-centered">
+                                      <div class="modal-content">
+                                          <form id="deleteForm" action="{{ route('rooms.destroy', $room->id) }}" method="post">
+                                              @csrf
+                                              @method('DELETE')
+                                              <div class="modal-body text-center">
+                                                  <img src="{{ asset('style_account/images/logo.png') }}" alt="asd" width="50" height="46">
+                                                  <h3>Are you sure you want to delete this Room?</h3>
+                                                  <div class="m-t-20">
+                                                      <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+                                                      <button type="submit" class="btn btn-danger">Delete</button>
+                                                  </div>
+                                              </div>
+                                          </form>
+                                      </div>
+                                  </div>
+                              </div>
+                             @endforeach
                            </tbody>
                         </table>
                      </div>
@@ -57,25 +80,7 @@
             </section>
          </div>
         </div>
-        <div id="deleteModal" class="modal animated rubberBand delete-modal" role="dialog">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <form id="deleteForm" action="{{ route('rooms.destroy', $room->id) }}" method="post">
-                        @csrf
-                        @method('DELETE')
-                        <div class="modal-body text-center">
-                            <img src="{{ asset('style_account/images/logo.png') }}" alt="asd" width="50" height="46">
-                            <h3>Are you sure you want to delete this Operator?</h3>
-                            <div class="m-t-20">
-                                <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-danger">Delete</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-         </div>
-</x-slot>
+    </x-slot>
 
-<x-partials.sidebar/>
+    <x-partials.sidebar/>
 </x-app-layout>
