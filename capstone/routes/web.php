@@ -42,4 +42,4 @@ Route::resource('/assigns', Assignbed::class);
 Route::post('/assign-store', [Assignbed::class, 'store'])->name('assign-store');
 
 Route::resource('/suggestions', SuggestionLink::class);
-Route::post('/suggestion-store', [Assignbed::class, 'store'])->name('suggestion-store');
+Route::post('/suggestion-store', [SuggestionLink::class, 'store'])->name('suggestion-store');

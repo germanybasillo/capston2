@@ -103,5 +103,23 @@
         updateDateTime();
     </script>
 
+
+<script>
+   // Function to format the date as MM/DD/YYYY
+   function formatDate(date) {
+       const month = (date.getMonth() + 1).toString().padStart(2, '0');
+       const day = date.getDate().toString().padStart(2, '0');
+       const year = date.getFullYear();
+       return `${month}/${day}/${year}`;
+   }
+
+   // Get the current date
+   const today = new Date();
+   const formattedDate = formatDate(today);
+
+   // Update the HTML element with the current date
+   document.getElementById('date').textContent = formattedDate;
+</script>
+
 </body>
 </html>

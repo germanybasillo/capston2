@@ -25,18 +25,17 @@ class SuggestionLink extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'email' => 'required|string',
-            'suggestion' => 'required|string',
-            'date' => 'required|string',
-            'reply' => 'required|email',
-            'status' => 'required|string',
-        ]);
-    
-        $suggestion = new Suggestion($request->all());
-        $suggestion->email = $request->input('email'); 
-        
+        $request->validate(
+            [
+                'email' => 'required|string',
+                'suggestion' => 'required|string',
+                'date' => 'required|string',
+                'reply' => 'required|string',
+                'status' => 'required|string'
+            ]
+        );
+        $suggestion= new Suggestion($request->all());
         $suggestion->save();
-        return redirect('/suggestions')->with('status', "Suggestion Data Has Been inserted");
+        return redirect('/suggestions')->with('status',"Suggestion Data Has Been inserted");
     }
 }

@@ -54,7 +54,9 @@
                     <div class="col-md-8 offset-md-2">
                         <div class="form-group">
                           <label>Date</label>
-                    <input type="date" name="date" class="form-control" placeholder="ex. 6000.00">
+                          <select class="form-control" name="date">
+                            <option id="date"></option>
+                        </select>
                     </div></div>
                     <div class="col-md-8 offset-md-2">
                         <div class="form-group">
