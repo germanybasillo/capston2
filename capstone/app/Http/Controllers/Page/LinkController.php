@@ -16,6 +16,6 @@ class LinkController extends Controller
     {
         $tenants = Tenant::all();
         $assigns = Assign::all();
-       return view("invoice.invoice", compact('tenants','assigns'));
+       return view("page.invoice", compact('tenants','assigns'));
    }
 }

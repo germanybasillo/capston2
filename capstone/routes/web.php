@@ -19,7 +19,7 @@ Route::post('/register', [LoginRegister::class, 'validate_register'])->name('val
 Route::get('/logout',  [LoginRegister::class, 'logout'])->name('logout');
 
 Route::get('/index', [LinkController::class, 'index'])->name('index');
-Route::get('/invoice', [LinkController::class, 'invoice'])->name('invoice.invoice');
+Route::get('/invoice', [LinkController::class, 'invoice'])->name('invoice');
 
 
 Route::get('/landlord', [Dashboard::class, 'landlord'])->name('landlord');
