@@ -42,13 +42,11 @@
               <!-- info row -->
               <div class="row invoice-info">
                 <div class="col-sm-4 invoice-col">
-                  From
                   <address>
-                    <strong>Admin, Inc.</strong><br>
-                    795 Folsom Ave, Suite 600<br>
-                    San Francisco, CA 94107<br>
-                    Phone: (804) 123-5432<br>
-                    Email: info@almasaeedstudio.com
+                    <strong>Admin</strong><br>
+                    Tagum Davao Del Norte<br>
+                    Phone:+63 9944398759<br>
+                    Email:Homies@Homies.com
                   </address>
                 </div>
                 <!-- /.col -->
@@ -70,7 +68,12 @@
                   </div></b>
                   <b><div class="form-group">
                     <label>Due Date</label>
-                    <input type="date" name="date" class="form-control">
+                    <select name="date" id="date" class="form-control">
+                      <option selected disabled>Select Your Due Date</option>
+                       @foreach($assigns as $assign)
+                      <option value="{{ $assign->due_date }}">{{ $assign->due_date }}</option>
+                      @endforeach
+                      </select>
                   </div></b><br>
                 </div>
                 <!-- /.col -->
@@ -91,10 +94,10 @@
                     </thead>
                     <tbody>
                     <tr>
-                      <td>Monthly Rent</td>
-                      <td>September</td>
-                      <td>2021</td>
-                      <td>Php 5,000.00</td>
+                      <td><input type="text"></td>
+                      <td><input type="text"></td>
+                      <td><input type="text"></td>
+                      <td><input type="text"></td>
                     </tr>
                     </tbody>
                   </table>
@@ -107,34 +110,28 @@
                 <!-- accepted payments column -->
                 <div class="col-6">
                   <p class="lead">Payment Methods:</p>
-                  <img src="../assets/img/credit/visa.png" alt="Visa">
-                  <img src="../assets/img/credit/mastercard.png" alt="Mastercard">
-                  <img src="../assets/img/credit/american-express.png" alt="American Express">
                   <img src="../assets/img/credit/paypal2.png" alt="Paypal">
-
                   <p class="text-muted well well-sm shadow-none" style="margin-top: 10px;">
-                    Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles, weebly ning heekya handango imeem
-                    plugg
-                    dopplr jibjab, movity jajah plickers sifteo edmodo ifttt zimbra.
+                   Naay Gcash ahhaahahahahahahahahaah
                   </p>
                 </div>
                 <!-- /.col -->
                 <div class="col-6">
-                  <p class="lead">Amount Due Sept/06/2021</p>
+                  <p class="lead">Amount Due <input type="text"></p>
 
                   <div class="table-responsive">
                     <table class="table">
                       <tr>
                         <th style="width:50%">Subtotal:</th>
-                        <td>Php 3000.00</td>
+                        <td><input type="text"></td>
                       </tr>
                       <tr>
                         <th>Tax (9.3%)</th>
-                        <td>Php 10.34</td>
+                        <td><input type="text"></td>
                       </tr>
                       <tr>
                         <th>Total:</th>
-                        <td>php 3190.00</td>
+                        <td><input type="text"></td>
                       </tr>
                     </table>
                   </div>
