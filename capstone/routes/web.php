@@ -21,6 +21,7 @@ Route::get('/logout',  [LoginRegister::class, 'logout'])->name('logout');
 Route::get('/index', [LinkController::class, 'index'])->name('index');
 Route::get('/invoice', [LinkController::class, 'invoice'])->name('invoice.invoice');
 
+
 Route::get('/landlord', [Dashboard::class, 'landlord'])->name('landlord');
 Route::get('/tenant', [Dashboard::class, 'tenant'])->name('tenant');
 
