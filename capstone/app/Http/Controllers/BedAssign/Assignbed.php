@@ -5,6 +5,9 @@ namespace App\Http\Controllers\BedAssign;
 use App\Http\Controllers\Controller;
 use Illuminate\View\View;
 use App\Models\Assign;
+use App\Models\Tenant;
+use App\Models\Room;
+use App\Models\Bed;
 use Illuminate\Http\Request;
 
 class Assignbed extends Controller
@@ -20,9 +23,28 @@ class Assignbed extends Controller
     public function create(): View
     {
         $assigns = Assign::all();
-        return view('bedassign.addassign', compact('assigns'));
+        $tenants = Tenant::all();
+        $rooms = Room::all();
+        $beds = Bed::all();
+        return view('bedassign.addassign', compact('assigns', 'tenants','rooms','beds'));
+    }
+    
+    public function store(Request $request)
+    {
+        $request->validate(
+            [
+                'email' => 'required|string',
+                'room_no' => 'required|string',
+                'bed_no' => 'required|string',
+                'date_start' => 'required|string',
+                'due_date' => 'required|string'
+            ]
+        );
+        $assign= new Assign($request->all());
+        $assign->save();
+        return redirect('/beds')->with('status',"Bed-Management Data Has Been inserted");
     }
 
-    
+
 }
 

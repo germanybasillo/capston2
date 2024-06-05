@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('assigns', function (Blueprint $table) {
             $table->id();
-            $table->string('tname');
+            $table->string('email');
             $table->string('room_no');
             $table->string('bed_no');
             $table->string('date_start');

@@ -39,17 +39,32 @@
                   <div class="col-md-8 offset-md-2">
                   <div class="form-group">
                     <label>Tenants</label>
-                    <input type="text" name="tname" class="form-control" placeholder="Tenants Name">
+                    <select name="email" id="email" class="form-control">
+                        <option selected disabled>Select Your Tenant Email</option>
+                        @foreach($tenants as $tenant)
+                            <option value="{{ $tenant->email }}">{{ $tenant->email }}</option>
+                        @endforeach
+                    </select>
                   </div></div>
                   <div class="col-md-8 offset-md-2">
                   <div class="form-group">
                     <label>Room No.</label>
-                    <input type="text" name="room_no" class="form-control" placeholder="ex. RM-0001">
+                    <select name="room_no" id="room_no" class="form-control">
+                        <option selected disabled>Select Your Room Number</option>
+                        @foreach($rooms as $room)
+                            <option value="{{ $room->number }}">{{ $room->number }}</option>
+                        @endforeach
+                    </select>
                   </div></div>
                   <div class="col-md-8 offset-md-2">
                   <div class="form-group">
                     <label>Bed No.</label>
-                    <input type="text" name="bed_no" class="form-control" placeholder="ex. BD-0001">
+                    <select name="bed_no" id="bed_no" class="form-control">
+                        <option selected disabled>Select Your Bed Number</option>
+                        @foreach($beds as $bed)
+                            <option value="{{ $bed->bed_no }}">{{ $bed->bed_no }}</option>
+                        @endforeach
+                    </select>
                   </div></div>
                   <div class="col-md-8 offset-md-2">
                   <div class="form-group">

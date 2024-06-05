@@ -9,7 +9,7 @@ class Assign extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'tname',
+        'email',
         'room_no',
         'bed_no',
         'date_start',

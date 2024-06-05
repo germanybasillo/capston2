@@ -31,7 +31,7 @@
                         <table id="example1" class="table table-bordered table-hover">
                            <thead class="btn-cancel">
                               <tr>
-                                 <th>Tenant Name</th>
+                                 <th>Tenant Email</th>
                                  <th>Room No.</th>
                                  <th>Bed No.</th>
                                  <th>Date Start</th>
@@ -42,7 +42,7 @@
                            <tbody>
                              @foreach ($assigns as $assign)
                               <tr>
-                                 <td>{{$assign->tname}}</td>
+                                 <td>{{$assign->email}}</td>
                                  <td>{{$assign->room_no}}</td>
                                  <td>{{$assign->bed_no}}</td>
                                  <td>{{$assign->date_start}}</td>
