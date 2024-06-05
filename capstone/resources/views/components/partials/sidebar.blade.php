@@ -202,7 +202,7 @@
       </a>
     </li>
     <li class="nav-item">
-      <a href="/suggestion" class="nav-link">
+      <a href="/suggestions" class="nav-link">
         <i class="nav-icon fa fa-lightbulb"></i>
         <p>
             {{_('Suggestion')}}

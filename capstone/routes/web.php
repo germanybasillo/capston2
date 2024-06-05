@@ -7,6 +7,7 @@ use App\Http\Controllers\Tenant\TenantLink;
 use App\Http\Controllers\Bed\BedLink;
 use App\Http\Controllers\BedAssign\Assignbed;
 use App\Http\Controllers\Room\RoomLink;
+use App\Http\Controllers\Suggestion\SuggestionLink;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -22,7 +23,6 @@ Route::get('/index', [LinkController::class, 'index'])->name('index');
 Route::get('/invoice', [LinkController::class, 'invoice'])->name('invoice');
 Route::get('/notice', [LinkController::class, 'notice'])->name('notice');
 Route::get('/sms', [LinkController::class, 'sms'])->name('sms');
-Route::get('/suggestion', [LinkController::class, 'suggestion'])->name('suggestion');
 
 Route::get('/landlord', [Dashboard::class, 'landlord'])->name('landlord');
 Route::get('/tenant', [Dashboard::class, 'tenant'])->name('tenant');
@@ -40,3 +40,5 @@ Route::post('/bed-store', [BedLink::class, 'store'])->name('bed-store');
 
 Route::resource('/assigns', Assignbed::class);
 Route::post('/assign-store', [Assignbed::class, 'store'])->name('assign-store');
+
+Route::resource('/suggestions', SuggestionLink::class);

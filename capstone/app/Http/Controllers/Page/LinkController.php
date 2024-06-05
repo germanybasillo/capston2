@@ -31,9 +31,4 @@ class LinkController extends Controller
      return view("page.sms", compact('tenants'));
  }
 
- public function suggestion()
- {
-    return view("page.suggestion");
-}
-
 }

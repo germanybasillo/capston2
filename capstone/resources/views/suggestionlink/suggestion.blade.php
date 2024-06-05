@@ -9,7 +9,7 @@
                <div class="container-fluid">
                   <div class="row mb-2">
                      <div class="col-sm-6">
-                        <h1 class="m-0 text-dark"><span class="fa fa-bed"></span> Suggestions</h1>
+                        <h1 class="m-0 text-dark"><span class="fa fa-lightbulb"></span> Suggestions</h1>
                      </div>
                      <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -17,6 +17,9 @@
                            <li class="breadcrumb-item active">Suggestions</li>
                         </ol>
                      </div>
+                     <a class="btn btn-sm elevation-2" href="/suggestions/create" style="margin-top: 20px;margin-left: 10px;background-color: #05445E;color: #ddd;">
+                        <i class="fa fa-user-plus"></i> Add New
+                     </a>
                   </div>
                </div>
             </div>

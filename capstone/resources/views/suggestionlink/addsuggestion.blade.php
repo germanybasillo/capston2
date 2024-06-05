@@ -4,19 +4,19 @@
     </x-slot>
 
     <x-slot name="content">
-       <!-- Content Wrapper. Contains page content -->
- <div class="content-wrapper">
+        <!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark"><span class="fa fa-bell"></span> Notice Configuration</h1>
+            <h1 class="m-0 text-dark">New Suggestion</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Notice Settings</li>
+              <li class="breadcrumb-item active">Suggestion</li>
             </ol>
           </div>
         </div>
@@ -32,7 +32,8 @@
             <!-- jquery validation -->
             <div class="card card-success">
               <!-- form start -->
-              <form role="form" id="quickForm">
+              <form role="form" id="quickForm" action="{{url('room-store')}}" method="POST">
+                @csrf
                 <div class="card-body">
                   <div class="row">
                   <div class="col-md-8 offset-md-2">
@@ -40,16 +41,18 @@
                     <label>Tenant Email</label>
                     <select name="email" id="email" class="form-control">
                         <option selected disabled>Select Your Tenant Email</option>
-                        @foreach($tenants as $tenant)
-                            <option value="{{ $tenant->email }}">{{ $tenant->email }}</option>
+                         @foreach($tenants as $tenant)
+                        <option value="{{ $tenant->email }}">{{ $tenant->email }}</option>
                         @endforeach
-                    </select>
+                        </select>
                   </div></div>
                   <div class="col-md-8 offset-md-2">
                   <div class="form-group">
-                    <label>Notice Body</label>
-                    <textarea  class="form-control"></textarea>
+                    <label>Description</label>
+                    <textarea  class="form-control" name="description" placeholder="ex. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet"></textarea>
+                    <x-validation.description/>
                   </div></div>
+                
 
                 </div>
                 <!-- /.card-body -->
@@ -72,9 +75,7 @@
     </section>
     <!-- /.content -->
   </div>
-  <!-- /.content-wrapper -->
-    </x-slot>
+</x-slot>
 
-    <x-partials.sidebar/>
+<x-partials.sidebar/>
 </x-app-layout>
-
