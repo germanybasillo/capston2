@@ -37,4 +37,12 @@ class BedLink extends Controller
         $bed->save();
         return redirect('/beds')->with('status',"Bed-Management Data Has Been inserted");
     }
+
+    public function destroy($id)
+    {
+      $bed = Bed::find($id);
+      $bed->delete();
+      return redirect("/beds")
+        ->with('success', 'Bed '.$id.'info deleted successfully');
+    }
 }

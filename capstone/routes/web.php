@@ -5,6 +5,7 @@ use App\Http\Controllers\Page\LinkController;
 use App\Http\Controllers\Usertype\Dashboard;
 use App\Http\Controllers\Tenant\TenantLink;
 use App\Http\Controllers\Bed\BedLink;
+use App\Http\Controllers\BedAssign\Assignbed;
 use App\Http\Controllers\Room\RoomLink;
 use Illuminate\Support\Facades\Route;
 
@@ -31,4 +32,6 @@ Route::put('rooms/{id}', [RoomLink::class, 'update'])->name('rooms.update');
 
 Route::resource('beds', BedLink::class);
 Route::post('bed-store', [BedLink::class, 'store'])->name('bed-store');
-Route::put('rooms/{id}', [BedLink::class, 'update'])->name('rooms.update');
+
+Route::resource('assigns', Assignbed::class);
+Route::post('assign-store', [Assignbed::class, 'store'])->name('assign-store');

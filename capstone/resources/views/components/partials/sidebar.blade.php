@@ -169,6 +169,14 @@
         </p>
       </a>
     </li>
+    <li class="nav-item">
+      <a href="/assigns" class="nav-link">
+        <i class="nav-icon fa fa-bed"></i>
+        <p>
+            {{_('Beds-Assign')}}
+        </p>
+      </a>
+    </li>
 
     @endif
     @endif
