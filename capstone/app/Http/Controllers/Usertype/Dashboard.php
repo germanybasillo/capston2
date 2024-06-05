@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Tenant;
 use App\Models\Room;
+use App\Models\Bed;
 
 class Dashboard extends Controller
 {
@@ -14,6 +15,7 @@ class Dashboard extends Controller
   return view("dashboard.landlord",[
     'tenants' => Tenant::count(),
     'rooms' => Room::count(),
+    'rooms' => Bed::count(),
 
   ]);
   

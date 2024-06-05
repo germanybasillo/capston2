@@ -155,9 +155,17 @@
     </li>
     <li class="nav-item">
       <a href="/rooms" class="nav-link">
-        <i class="nav-icon fa fa-users"></i>
+        <i class="nav-icon fa fa-home"></i>
         <p>
             {{_('Rooms')}}
+        </p>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="/beds" class="nav-link">
+        <i class="nav-icon fa fa-bed"></i>
+        <p>
+            {{_('Beds')}}
         </p>
       </a>
     </li>
