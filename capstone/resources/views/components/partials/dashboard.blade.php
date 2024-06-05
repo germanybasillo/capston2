@@ -43,7 +43,7 @@
               <!-- small box -->
               <div class="small-box bg-success">
                 <div class="inner">
-                  {{-- <h3>{{$rooms}}<sup style="font-size: 20px"></sup></h3> --}}
+                  <h3>{{$rooms}}<sup style="font-size: 20px"></sup></h3>
 
                   <p>Number of Rooms</p>
                 </div>

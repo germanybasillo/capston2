@@ -49,12 +49,13 @@
                          </td>
                          <td>{{$tenant->address}}</td>
                          <td class="text-right">
-                            <a class="btn btn-sm btn-success" href="/tenants/{{$tenant->id}}" data-toggle="modal" data-target="#edit"><i
+                           {{-- <a class="btn btn-sm btn-success" href="/tenants/{{$tenant->id}}" data-toggle="modal" data-target="#edit"><i --}}
+                            <a class="btn btn-sm btn-success" href="/tenants/{{$tenant->id}}"><i
                                   class="fa fa-user-edit"></i></a>
-                           {{-- <a class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete"><i class="fa fa-trash-alt"></i></a> --}}
                            <a class="btn btn-sm btn-danger" data-toggle="modal" data-target="#deleteModal"><i class="fa fa-trash-alt"></i></a>
                          </td>
                       </tr>
+                      @endforeach
                    </tbody>
                 </table>
              </div>
@@ -79,7 +80,6 @@
                </div>
            </form>
        </div>
-       @endforeach
    </div>
 </div>
 </x-slot>

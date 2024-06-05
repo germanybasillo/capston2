@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\LoginRegister;
 use App\Http\Controllers\Page\LinkController;
 use App\Http\Controllers\Usertype\Dashboard;
 use App\Http\Controllers\Tenant\TenantLink;
+use App\Http\Controllers\Room\RoomLink;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -14,6 +15,7 @@ Route::post('/login', [LoginRegister::class, 'validate_login'])->name('validate_
 Route::get('/register', [LoginRegister::class, 'register'])->name('register');
 Route::post('/register', [LoginRegister::class, 'validate_register'])->name('validate_register');
 Route::get('/logout',  [LoginRegister::class, 'logout'])->name('logout');
+
 Route::get('/index', [LinkController::class, 'index'])->name('index');
 Route::get('/landlord', [Dashboard::class, 'landlord'])->name('landlord');
 Route::get('/tenant', [Dashboard::class, 'tenant'])->name('tenant');
@@ -22,3 +24,6 @@ Route::resource('tenants', TenantLink::class);
 Route::post('tenant-store', [TenantLink::class, 'store'])->name('tenant-store');
 Route::put('tenants/{id}', [TenantLink::class, 'update'])->name('tenants.update');
 
+Route::resource('rooms', RoomLink::class);
+Route::post('room-store', [RoomLink::class, 'store'])->name('room-store');
+Route::put('rooms/{id}', [RoomLink::class, 'update'])->name('rooms.update');

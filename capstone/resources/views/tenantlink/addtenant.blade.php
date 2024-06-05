@@ -15,7 +15,7 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="/landlord">Home</a></li>
               <li class="breadcrumb-item active">Tenants</li>
             </ol>
           </div>
@@ -32,7 +32,7 @@
             <!-- jquery validation -->
             <div class="card card-success">
               <!-- form start -->
-              <form role="form" id="quickForm" action="{{url('tenant-store')}}" method="POST">
+              <form role="form" id="quickForm" action="{{url('tenant-store,'$tenant->id)}}" method="POST">
                 @csrf
                 <div class="card-body">
                   <div class="row">

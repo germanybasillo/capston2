@@ -153,6 +153,14 @@
         </p>
       </a>
     </li>
+    <li class="nav-item">
+      <a href="/rooms" class="nav-link">
+        <i class="nav-icon fa fa-users"></i>
+        <p>
+            {{_('Rooms')}}
+        </p>
+      </a>
+    </li>
 
     @endif
     @endif
