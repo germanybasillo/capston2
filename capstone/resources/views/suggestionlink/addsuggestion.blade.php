@@ -32,7 +32,7 @@
             <!-- jquery validation -->
             <div class="card card-success">
               <!-- form start -->
-              <form role="form" id="quickForm" action="{{url('room-store')}}" method="POST">
+              <form role="form" id="quickForm" action="{{url('suggestion-store')}}" method="POST">
                 @csrf
                 <div class="card-body">
                   <div class="row">
@@ -58,7 +58,7 @@
                     </div></div>
                     <div class="col-md-8 offset-md-2">
                         <div class="form-group">
-                          <label>Date</label>
+                          <label>Reply</label>
                     <input type="reply" name="reply" class="form-control" placeholder="Reply.......">
                     </div></div>
                     <div class="col-md-8 offset-md-2">

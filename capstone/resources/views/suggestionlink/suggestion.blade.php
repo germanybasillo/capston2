@@ -31,7 +31,7 @@
                         <table id="example1" class="table table-bordered table-hover">
                            <thead class="btn-cancel">
                               <tr>
-                                 <th>Tenant Name</th>
+                                 <th>Tenant Email</th>
                                  <th>Suggestions</th>
                                  <th>Date</th>
                                  <th>Reply from owner</th>
@@ -40,25 +40,13 @@
                               </tr>
                            </thead>
                            <tbody>
+                              @foreach ($suggestions as $suggestion)
                               <tr>
-                                 <td>John Doe</td>
-                                 <td>Repair Windows</td>
-                                 <td>Sept 06,2021</td>
-                                 <td>Noted</td>
-                                 <td><span class="badge bg-success">solve</span></td>
-                                 <td class="text-right">
-                                    <a class="btn btn-sm btn-info" href="#" data-toggle="modal" data-target="#edit"><i
-                                          class="fa fa-eye"></i></a>
-                                    <a class="btn btn-sm btn-success" href="#" data-toggle="modal" data-target="#edit"><i
-                                          class="fa fa-reply"></i></a>
-                                 </td>
-                              </tr>
-                              <tr>
-                                 <td>Jane Doe</td>
-                                 <td>Wifi Connection</td>
-                                 <td>Sept 06,2021</td>
-                                 <td></td>
-                                 <td><span class="badge bg-danger">pending</span></td>
+                                 <td>{{$suggestion->email}}</td>
+                                 <td>{{$suggestion->suggestion}}</td>
+                                 <td>{{$suggestion->date}}</td>
+                                 <td>{{$suggestion->reply}}</td>
+                                 <td><span class="badge bg-success">{{$suggestion->status}}</span></td>
                                  <td class="text-right">
                                     <a class="btn btn-sm btn-info" href="#" data-toggle="modal" data-target="#edit"><i
                                           class="fa fa-eye"></i></a>
@@ -67,6 +55,7 @@
                                  </td>
                               </tr>
                            </tbody>
+                           @endforeach
                         </table>
                      </div>
                   </div>

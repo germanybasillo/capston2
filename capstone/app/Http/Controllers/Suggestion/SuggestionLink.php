@@ -23,4 +23,20 @@ class SuggestionLink extends Controller
         return view('suggestionlink.addsuggestion', compact('tenants'));
     }
 
+    public function store(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|string',
+            'suggestion' => 'required|string',
+            'date' => 'required|string',
+            'reply' => 'required|email',
+            'status' => 'required|string',
+        ]);
+    
+        $suggestion = new Suggestion($request->all());
+        $suggestion->email = $request->input('email'); 
+        
+        $suggestion->save();
+        return redirect('/suggestions')->with('status', "Suggestion Data Has Been inserted");
+    }
 }
