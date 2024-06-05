@@ -42,7 +42,7 @@ class Assignbed extends Controller
         );
         $assign= new Assign($request->all());
         $assign->save();
-        return redirect('/beds')->with('status',"Bed-Management Data Has Been inserted");
+        return redirect('/assigns')->with('status',"Bed-Management Data Has Been inserted");
     }
 
 
