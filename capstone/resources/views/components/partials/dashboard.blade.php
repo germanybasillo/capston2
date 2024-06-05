@@ -58,7 +58,7 @@
               <!-- small box -->
               <div class="small-box bg-warning">
                 <div class="inner">
-                  {{-- <h3>{{$beds}}</h3> --}}
+                  <h3>{{$beds}}</h3>
 
                   <p>Number of Beds</p>
                 </div>

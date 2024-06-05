@@ -40,6 +40,9 @@
                   <div class="form-group">
                     <label>Room No.</label>
                     <input type="text" name="room_no" class="form-control" placeholder="ex. RM-0001">
+                    @foreach($rooms as $room)
+                     <option value="{{ $room->number }}"> {{ $room->number }} </option>
+                     @endforeach
                   </div></div>
                   <div class="col-md-8 offset-md-2">
                   <div class="form-group">

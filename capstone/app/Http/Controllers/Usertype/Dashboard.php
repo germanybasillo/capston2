@@ -15,7 +15,7 @@ class Dashboard extends Controller
   return view("dashboard.landlord",[
     'tenants' => Tenant::count(),
     'rooms' => Room::count(),
-    'rooms' => Bed::count(),
+    'beds' => Bed::count(),
 
   ]);
   

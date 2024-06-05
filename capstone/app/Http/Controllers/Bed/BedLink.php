@@ -5,6 +5,7 @@ use Illuminate\View\View;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Bed;
+use App\Models\Room;
 
 class BedLink extends Controller
 {
@@ -17,7 +18,8 @@ class BedLink extends Controller
 
     public function create(): View
     {
-        return view('bedlink.addbed');
+        $rooms = Room::all();
+        return view('bedlink.addbed', compact('rooms'));
     }
 
     public function store(Request $request)
