@@ -49,8 +49,7 @@ class TenantLink extends Controller
         return redirect('/tenants')->with('status', "Tenant Data Has Been inserted");
     }
     
-    public function update(Request $request, $id){
-        
+    public function update(Request $request, $id) {
         $request->validate(
             [
                 'fname' => 'required|string',
@@ -61,13 +60,17 @@ class TenantLink extends Controller
                 'address' => 'required|string',
                 'gender' => 'required|string',
                 'profile' => 'required'
-            ]
-        );
-        
+            ],
+            [
+                'email.unique' => 'The email has already been taken.',
+                'contact.unique' => 'The contact number has already been taken.'
+            ]);
+    
         $tenant = Tenant::find($id);
         $tenant->update($request->all());
+    
         return redirect("/tenants")
-        ->with('status', 'Tenant '.$request['email'].' was updated successfully.');
+            ->with('status', 'Tenant ' . $request['email'] . ' was updated successfully.');
     }
     
   public function destroy($id)

@@ -63,12 +63,14 @@
                   <div class="form-group">
                     <label>Email</label>
                     <input type="email" name="email" class="form-control" placeholder="ex. email@gmail.com" value="{{$tenant->email}}">
+                    <x-validation.email/>
                   </div>
                   </div>
                   <div class="col-md-4">
                   <div class="form-group">
                     <label>Contact</label>
                     <input type="text" name="contact" class="form-control" placeholder="ex. 09654645341" value="{{$tenant->contact}}">
+                    <x-validation.number/>
                   </div>
                   </div>
                   <div class="col-md-4">

@@ -34,7 +34,7 @@ class RoomLink extends Controller
         'description' => 'required|string',
         'roompic' => 'required',
     ], [
-        'number.unique' => 'The number has already been taken.',
+        'number.unique' => 'The room number has already been taken. Please choose a different number.',
     ]);
 
     $room = new Room($request->all());
@@ -52,12 +52,13 @@ class RoomLink extends Controller
                 'roompic' => 'required'
             ],
             [
-                'number.unique' => 'The number has already been taken.',
-            ]);
+                'number.unique' => 'The room number has already been taken. Please choose a different number.',
+            ]
+        );
         
         $room = Room::find($id);
         $room->update($request->all());
-        return redirect("/rooms")->with('status', 'Room '.$request['email'].' was updated successfully.');
+        return redirect("/rooms")->with('status', 'Room '.$room->number.' was updated successfully.');
     }
 
     public function destroy($id)

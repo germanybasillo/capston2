@@ -41,6 +41,7 @@
                   <div class="form-group">
                     <label>Room No.</label>
                     <input type="text" name="number" class="form-control" placeholder="ex. RM-0001" value="{{$room->number}}">
+                    <x-validation.number/>
                   </div></div>
                   <div class="col-md-8 offset-md-2">
                   <div class="form-group">
