@@ -20,7 +20,8 @@ Route::get('/logout',  [LoginRegister::class, 'logout'])->name('logout');
 
 Route::get('/index', [LinkController::class, 'index'])->name('index');
 Route::get('/invoice', [LinkController::class, 'invoice'])->name('invoice');
-
+Route::get('/notice', [LinkController::class, 'notice'])->name('notice');
+Route::get('/sms', [LinkController::class, 'sms'])->name('sms');
 
 Route::get('/landlord', [Dashboard::class, 'landlord'])->name('landlord');
 Route::get('/tenant', [Dashboard::class, 'tenant'])->name('tenant');

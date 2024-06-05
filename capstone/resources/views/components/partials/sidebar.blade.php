@@ -185,7 +185,22 @@
         </p>
       </a>
     </li>
-
+    <li class="nav-item">
+      <a href="/notice" class="nav-link">
+        <i class="nav-icon fa fa-bell"></i>
+        <p>
+            {{_('Notice')}}
+        </p>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="/sms" class="nav-link">
+        <i class="nav-icon fa fa-envelope"></i>
+        <p>
+            {{_('Message')}}
+        </p>
+      </a>
+    </li>
     @endif
     @endif
 

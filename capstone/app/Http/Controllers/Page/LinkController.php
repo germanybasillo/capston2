@@ -18,4 +18,16 @@ class LinkController extends Controller
         $assigns = Assign::all();
        return view("page.invoice", compact('tenants','assigns'));
    }
+
+   public function notice()
+   {
+    $tenants = Tenant::all();
+      return view("page.notice", compact('tenants'));
+  }
+
+  public function sms()
+  {
+    $tenants = Tenant::all();
+     return view("page.sms", compact('tenants'));
+ }
 }
