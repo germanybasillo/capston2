@@ -71,5 +71,37 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+
+<script>
+   // Function to format the date and time as MM/DD/YYYY HH:MM:SS AM/PM
+   function formatDateTime(date) {
+       const month = (date.getMonth() + 1).toString().padStart(2, '0');
+       const day = date.getDate().toString().padStart(2, '0');
+       const year = date.getFullYear();
+       let hours = date.getHours();
+       const minutes = date.getMinutes().toString().padStart(2, '0');
+       const seconds = date.getSeconds().toString().padStart(2, '0');
+       const ampm = hours >= 12 ? 'PM' : 'AM';
+       hours = hours % 12;
+       hours = hours ? hours : 12; // the hour '0' should be '12'
+       hours = hours.toString().padStart(2, '0');
+       return `${month}/${day}/${year} ${hours}:${minutes}:${seconds} ${ampm}`;
+   }
+
+    // Get the current date and time
+    function updateDateTime() {
+            const now = new Date();
+            const formattedDateTime = formatDateTime(now);
+            // Update the HTML element with the current date and time
+            document.getElementById('current-date-time').textContent = formattedDateTime;
+        }
+
+        // Update the date and time every second
+        setInterval(updateDateTime, 1000);
+
+        // Initialize with the current date and time immediately
+        updateDateTime();
+    </script>
+
 </body>
 </html>

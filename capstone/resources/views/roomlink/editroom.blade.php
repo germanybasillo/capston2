@@ -79,5 +79,5 @@
   </div>
     </x-slot>
 
-<x-partials.sidebar/>
+    <x-partials.sidebar/>
 </x-app-layout>

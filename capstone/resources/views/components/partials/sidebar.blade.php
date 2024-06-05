@@ -141,7 +141,7 @@
       <a href="{{ route('landlord')}}" class="nav-link">
         <i class="nav-icon fa fa-tachometer-alt"></i>
         <p>
-          {{ __('Dashboard') }}{{--({{$tenants}}) --}}
+          {{ __('Dashboard') }}
         </p>
       </a>
     </li>
@@ -174,6 +174,14 @@
         <i class="nav-icon fa fa-bed"></i>
         <p>
             {{_('Beds-Assign')}}
+        </p>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="/invoice" class="nav-link">
+        <i class="nav-icon fa fa-microphone"></i>
+        <p>
+            {{_('Invoice')}}
         </p>
       </a>
     </li>

@@ -7,5 +7,5 @@
         @extends('components.partials.dashboard')
     </x-slot>
 
-    <x-partials.sidebar :tenants="$tenants"/>
+    <x-partials.sidebar/>
 </x-app-layout>

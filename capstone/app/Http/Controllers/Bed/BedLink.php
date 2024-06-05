@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Bed;
 use App\Models\Room;
 
+
 class BedLink extends Controller
 {
     public function index(): View
@@ -19,7 +20,7 @@ class BedLink extends Controller
     public function create(): View
     {
         $rooms = Room::all();
-        return view('bedlink.addbed', compact('rooms'));
+        return view('bedlink.addbed', compact('rooms',));
     }
 
     public function store(Request $request)

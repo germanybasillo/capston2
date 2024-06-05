@@ -19,19 +19,21 @@ Route::post('/register', [LoginRegister::class, 'validate_register'])->name('val
 Route::get('/logout',  [LoginRegister::class, 'logout'])->name('logout');
 
 Route::get('/index', [LinkController::class, 'index'])->name('index');
+Route::get('/invoice', [LinkController::class, 'invoice'])->name('invoice.invoice');
+
 Route::get('/landlord', [Dashboard::class, 'landlord'])->name('landlord');
 Route::get('/tenant', [Dashboard::class, 'tenant'])->name('tenant');
 
-Route::resource('tenants', TenantLink::class);
-Route::post('tenant-store', [TenantLink::class, 'store'])->name('tenant-store');
-Route::put('tenants/{id}', [TenantLink::class, 'update'])->name('tenants.update');
+Route::resource('/tenants', TenantLink::class);
+Route::post('/tenant-store', [TenantLink::class, 'store'])->name('tenant-store');
+Route::put('/tenants/{id}', [TenantLink::class, 'update'])->name('tenants.update');
 
-Route::resource('rooms', RoomLink::class);
-Route::post('room-store', [RoomLink::class, 'store'])->name('room-store');
-Route::put('rooms/{id}', [RoomLink::class, 'update'])->name('rooms.update');
+Route::resource('/rooms', RoomLink::class);
+Route::post('/room-store', [RoomLink::class, 'store'])->name('room-store');
+Route::put('/rooms/{id}', [RoomLink::class, 'update'])->name('rooms.update');
 
-Route::resource('beds', BedLink::class);
-Route::post('bed-store', [BedLink::class, 'store'])->name('bed-store');
+Route::resource('/beds', BedLink::class);
+Route::post('/bed-store', [BedLink::class, 'store'])->name('bed-store');
 
-Route::resource('assigns', Assignbed::class);
-Route::post('assign-store', [Assignbed::class, 'store'])->name('assign-store');
+Route::resource('/assigns', Assignbed::class);
+Route::post('/assign-store', [Assignbed::class, 'store'])->name('assign-store');
