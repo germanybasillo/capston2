@@ -46,7 +46,7 @@
         <a href="/income" class="nav-link">
           <i class="nav-icon fa fa-chart-bar"></i>
           <p>
-              {{_('Report')}}
+              {{_('Income Report')}}
           </p>
         </a>
       </li>

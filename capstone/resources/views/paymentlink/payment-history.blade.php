@@ -60,7 +60,7 @@
                                           @method('DELETE')
                                           <div class="modal-body text-center">
                                               <img src="{{ asset('style_account/images/logo.png') }}" alt="Logo" width="50" height="46">
-                                              <h3>Are you sure you want to delete this History?</h3>
+                                              <h3>Are you sure you want to delete this Payment-History?</h3>
                                               <div class="m-t-20">
                                                   <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
                                                   <button type="submit" class="btn btn-danger">Delete</button>
