@@ -16,7 +16,6 @@ class Dashboard extends Controller
     $rooms = Room::count();
     $beds = Bed::count();
     
-    
     return view("dashboard.landlord", compact('tenants', 'rooms', 'beds'));
 }
   public function tenant(){
