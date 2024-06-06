@@ -69,7 +69,9 @@
                   <div class="col-md-8 offset-md-2">
                   <div class="form-group">
                     <label>Date Start</label>
-                    <input type="date" name="date_start" class="form-control" placeholder="ex. 120.00">
+                    <select class="form-control" name="date_start">
+                      <option id="date"></option>
+                  </select>
                   </div></div>
                   <div class="col-md-8 offset-md-2">
                   <div class="form-group">

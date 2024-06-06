@@ -29,6 +29,14 @@
         nav ul li a i{
            color:#ddd;
         }
+
+        .modal-backdrop.show{
+         opacity: .1;
+        }
+
+        .modal-backdrop{
+         height: 0;
+        }
      </style>
 </head>
     <body class="hold-transition sidebar-mini layout-fixed">

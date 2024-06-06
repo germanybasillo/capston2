@@ -57,8 +57,10 @@
                     </div></div>
                   <div class="col-md-8 offset-md-2">
                   <div class="form-group">
-                    <label>Set Date</label>
-                    <input type="date" name="date" class="form-control">
+                    <label>Date</label>
+                    <select class="form-control" name="date">
+                      <option id="date"></option>
+                  </select>
                   </div></div>
                   <div class="col-md-8 offset-md-2">
                   <div class="form-group">
