@@ -28,7 +28,7 @@
                         <table id="example1" class="table table-bordered table-hover">
                            <thead class="btn-cancel">
                               <tr>
-                                 <th>Tenant Name</th>
+                                 <th>Tenant Email</th>
                                  <th>Room No.</th>
                                  <th>Monthly Due</th>
                                  <th>Total Payment</th>
@@ -36,55 +36,24 @@
                               </tr>
                            </thead>
                            <tbody>
+                            @foreach($tenants as $tenant)
+                            @foreach($rooms as $room)
                              <tr>
-                                <td>Tenant 1</td>
-                                <td>1</td>
-                                <td>3000</td>
-                                <td>3000</td>
-                                <td>2000</td>
-                             </tr>
-                             <tr>
-                                <td>Tenant 2</td>
-                                <td>2</td>
-                                <td>3000</td>
-                                <td>3000</td>
-                                <td>2000</td>
-                             </tr>
-                             <tr>
-                                <td>Tenant 3</td>
-                                <td>3</td>
-                                <td>3000</td>
-                                <td>3000</td>
-                                <td>2000</td>
-                             </tr>
-                             <tr>
-                                <td>Tenant 4</td>
-                                <td>4</td>
-                                <td>3000</td>
-                                <td>3000</td>
-                                <td>2000</td>
-                             </tr>
-                             <tr>
-                                <td>Tenant 5</td>
-                                <td>5</td>
-                                <td>3000</td>
-                                <td>3000</td>
-                                <td>2000</td>
-                             </tr>
-                             <tr>
-                                <td>Tenant 6</td>
-                                <td>6</td>
-                                <td>3000</td>
-                                <td>3000</td>
-                                <td>2000</td>
+                                <td>{{$tenant->email}}</td>
+                                <td>{{$room->room_no}}</td>
+                                <td>{{$tenant->pay}}</td>
+                                <td>{{$tenant->total}}</td>
+                                <td>{{$tenant->balance}}</td>
                              </tr>
                              <tr>
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td><b>Total Collectible</b></td>
-                                <td>20000</td>
+                                <td><b>{{$tenant->total}}</b></td>
+                                <td>{{$tenant->collecttoal}}</td>
                              </tr>
+                             @endforeach
+                             @endforeach
                            </tbody>
                         </table>
                      </div>

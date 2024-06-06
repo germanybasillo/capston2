@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Tenant;
 use App\Models\Assign;
 use App\Models\Payment;
+use App\Models\Room;
 class LinkController extends Controller
 {
     public function index()
@@ -47,8 +48,9 @@ class LinkController extends Controller
 
  public function collect()
   {
-   
-     return view("page.collectibles");
+    $tenants = Tenant::all();
+    $rooms = Room::all();
+     return view("page.collectibles", compact('tenants','rooms'));
+    }
  }
 
-}
