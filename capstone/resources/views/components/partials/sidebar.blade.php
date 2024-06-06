@@ -26,7 +26,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a href="/paymenthistory" class="nav-link">
+        <a href="/payments/show" class="nav-link">
           <i class="nav-icon fa fa-file "></i>
           <p>
               {{_('Payment History')}}
@@ -34,26 +34,10 @@
         </a>
       </li>
       <li class="nav-item">
-        <a href="/payment" class="nav-link">
+        <a href="/payments" class="nav-link">
           <i class="nav-icon fa fa-file-invoice"></i>
           <p>
               {{_('Payments')}}
-          </p>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="/notices" class="nav-link">
-          <i class="nav-icon fa fa-bell"></i>
-          <p>
-              {{_('Notice Board')}}
-          </p>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="/suggestion" class="nav-link">
-          <i class="nav-icon fa fa-file-invoice"></i>
-          <p>
-              {{_('Suggestion')}}
           </p>
         </a>
       </li>

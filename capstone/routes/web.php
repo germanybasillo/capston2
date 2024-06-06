@@ -8,15 +8,12 @@ use App\Http\Controllers\Bed\BedLink;
 use App\Http\Controllers\BedAssign\Assignbed;
 use App\Http\Controllers\Bill\Billlink;
 use App\Http\Controllers\Room\RoomLink;
+use App\Http\Controllers\Payment\Paymentlink;
 use App\Http\Controllers\Suggestion\SuggestionLink;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('page.index');
-});
-
-Route::get('/paymenthistory', function () {
-    return view('payment-history');
 });
 
 Route::get('/login', [LoginRegister::class, 'login'])->name('login');
@@ -53,3 +50,6 @@ Route::post('/suggestion-store', [SuggestionLink::class, 'store'])->name('sugges
 
 Route::resource('/bills', Billlink::class);
 Route::post('/bill-store', [Billlink::class, 'store'])->name('bill-store');
+
+Route::resource('/payments', Paymentlink::class);
+Route::post('/payment-store', [Paymentlink::class, 'store'])->name('payment-store');

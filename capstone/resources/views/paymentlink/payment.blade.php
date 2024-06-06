@@ -9,7 +9,7 @@
                <div class="container-fluid">
                   <div class="row mb-2">
                      <div class="col-sm-6">
-                        <h1 class="m-0 text-dark"><span class="fa fa-file"></span> Payments History</h1>
+                        <h1 class="m-0 text-dark"><span class="fa fa-money-bill"></span> Payments</h1>
                      </div>
                      <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -17,6 +17,9 @@
                            <li class="breadcrumb-item active">Payments</li>
                         </ol>
                      </div>
+                     <a class="btn btn-sm elevation-2" href="/payments/create" style="margin-top: 20px;margin-left: 10px;background-color: #05445E;color: #ddd;">
+                        <i class="fa fa-user-plus"></i> Add New
+                     </a>
                   </div>
                </div>
             </div>
@@ -28,19 +31,32 @@
                         <table id="example1" class="table table-bordered table-hover">
                            <thead class="btn-cancel">
                               <tr>
-                                 <th>Invoice No.</th>
-                                 <th>Amount Paid</th>
-                                 <th>Date Of Payment</th>
+                                <th>Tenant Email</th>
+                                 <th>Payment Amount</th>
+                                 <th>Date</th>
+                                 <th>Proof of Payment</th>
                                  <th>Remarks</th>
+                                 <th>Status</th>
+                                 <th>Action</th>
                               </tr>
                            </thead>
                            <tbody>
+                            @foreach($payments as $payment)
                               <tr>
-                                 <td>IN-000122</td>
-                                 <td>1,500.00</td>
-                                 <td>Sept 30,2021</td>
-                                 <td>Paid</td>
+                                <td>{{$payment->email}}</td>
+                                 <td>{{$payment->amount}}</td>
+                                 <td>{{$payment->date}}</td>
+                                 <td>{{$payment->proof}}</td>
+                                 <td>{{$payment->remark}}</td>
+                                 <td><span class="badge bg-success">{{$payment->status}}</span></td>
+                                 <td class="text-right">
+                                   <a class="btn btn-sm btn-info" href="#" data-toggle="modal" data-target="#edit"><i
+                                         class="fa fa-eye"></i></a>
+                                         <a class="btn btn-sm btn-success" href="#" data-toggle="modal" data-target="#edit"><i
+                                               class="fa fa-edit"></i></a>
+                                 </td>
                               </tr>
+                              @endforeach
                            </tbody>
                         </table>
                      </div>
@@ -67,3 +83,4 @@
 
     <x-partials.sidebar/>
 </x-app-layout>
+
