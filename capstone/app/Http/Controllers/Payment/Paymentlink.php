@@ -45,4 +45,13 @@ class Paymentlink extends Controller
         return view('paymentlink.payment-history',compact('payments'));
     }
 
+    
+    public function destroy($id)
+    {
+      $payment = Payment::find($id);
+      $payment->delete();
+      return redirect("/payments")
+        ->with('success', 'Payment '.$id.'info deleted successfully');
+    }
+
 }

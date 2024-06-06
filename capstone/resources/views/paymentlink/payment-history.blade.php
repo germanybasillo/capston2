@@ -47,35 +47,37 @@
                                   <td>{{$payment->remark}}</td>
                                   <td><span class="badge bg-success">{{$payment->status}}</span></td>
                                   <td class="text-right">
-                                    <a class="btn btn-sm btn-info" href="#" data-toggle="modal" data-target="#edit"><i
-                                          class="fa fa-eye"></i></a>
-                                          <a class="btn btn-sm btn-success" href="#" data-toggle="modal" data-target="#edit"><i
-                                                class="fa fa-edit"></i></a>
+                                    <a class="btn btn-sm btn-danger" data-toggle="modal" data-target="#deleteModal{{$payment->id}}"><i
+                                       class="fa fa-trash-alt"></i></a>
                                   </td>
                                </tr>
-                               @endforeach
-                            </tbody>
-                         </table>
-                      </div>
-                   </div>
-                </div>
-             </section>
-         </div>
-        </div>
-        <div id="delete" class="modal animated rubberBand delete-modal" role="dialog">
-         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-               <div class="modal-body text-center">
-                  <img src="../assets/img/sent.png" alt="" width="50" height="46">
-                  <h3>Are you sure want to delete this Operator?</h3>
-                  <div class="m-t-20">
-                     <a href="#" class="btn btn-white" data-dismiss="modal">Close</a>
-                     <button type="submit" class="btn btn-danger">Delete</button>
-                  </div>
-               </div>
-            </div>
-         </div>
-        </div>
+                             <!-- Delete Modal -->
+                             <div id="deleteModal{{$payment->id}}" class="modal animated rubberBand delete-modal" role="dialog">
+                              <div class="modal-dialog modal-dialog-centered">
+                                  <div class="modal-content">
+                                      <form id="deleteForm{{$payment->id}}" action="{{ route('payments.show', $payment->id) }}" method="post">
+                                          @csrf
+                                          @method('DELETE')
+                                          <div class="modal-body text-center">
+                                              <img src="{{ asset('style_account/images/logo.png') }}" alt="Logo" width="50" height="46">
+                                              <h3>Are you sure you want to delete this History?</h3>
+                                              <div class="m-t-20">
+                                                  <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+                                                  <button type="submit" class="btn btn-danger">Delete</button>
+                                              </div>
+                                          </div>
+                                      </form>
+                                  </div>
+                              </div>
+                          </div>
+                         @endforeach
+                       </tbody>
+                    </table>
+                 </div>
+              </div>
+           </div>
+        </section>
+     </div>
     </x-slot>
 
     <x-partials.sidebar/>

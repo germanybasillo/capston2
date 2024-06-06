@@ -53,3 +53,4 @@ Route::post('/bill-store', [Billlink::class, 'store'])->name('bill-store');
 
 Route::resource('/payments', Paymentlink::class);
 Route::post('/payment-store', [Paymentlink::class, 'store'])->name('payment-store');
+
