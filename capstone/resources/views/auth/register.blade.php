@@ -39,7 +39,7 @@
                             </div>
                             <div class="links">
                                 <p><a href="#"></a></p>
-                                <p class="right"><a href="{{ route('login') }}">{{ __('New User? Register') }}</a></p>
+                                <p class="right"><a href="{{ route('login') }}">{{ __('Already User? Login') }}</a></p>
                                 <div class="clear"></div>
                             </div>
                         </form> 
