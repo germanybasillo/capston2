@@ -26,7 +26,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a href="/payments/show" class="nav-link">
+        <a href="/history" class="nav-link">
           <i class="nav-icon fa fa-file "></i>
           <p>
               {{_('Payment History')}}
@@ -51,7 +51,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a href="/collectibles" class="nav-link">
+        <a href="/collect" class="nav-link">
           <i class="nav-icon fa fa-table"></i>
           <p>
               {{_('Collectibles')}}

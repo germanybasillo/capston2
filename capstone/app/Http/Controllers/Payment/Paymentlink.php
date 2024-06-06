@@ -38,13 +38,6 @@ class Paymentlink extends Controller
         $payment->save();
         return redirect('/payments')->with('status',"Payment Data Has Been inserted");
     }
-
-    public function show(): View
-    {
-        $payments = Payment::all();
-        return view('paymentlink.payment-history',compact('payments'));
-    }
-
     
     public function destroy($id)
     {

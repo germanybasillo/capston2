@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Tenant;
 use App\Models\Assign;
+use App\Models\Payment;
 class LinkController extends Controller
 {
     public function index()
@@ -30,5 +31,24 @@ class LinkController extends Controller
     $tenants = Tenant::all();
      return view("page.sms", compact('tenants'));
  }
+
+ public function income()
+  {
+   
+     return view("page.incomereport");
+ }
  
+ 
+ public function history()
+ {
+     $payments = Payment::all();
+     return view('page.payment-history',compact('payments'));
+ }
+
+ public function collect()
+  {
+   
+     return view("page.collectibles");
+ }
+
 }
