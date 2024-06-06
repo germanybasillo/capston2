@@ -11,8 +11,9 @@ use App\Http\Controllers\Suggestion\SuggestionLink;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('page.index');
 });
+
 Route::get('/login', [LoginRegister::class, 'login'])->name('login');
 Route::post('/login', [LoginRegister::class, 'validate_login'])->name('validate_login');
 Route::get('/register', [LoginRegister::class, 'register'])->name('register');
