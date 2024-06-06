@@ -25,17 +25,14 @@
   <div id="logoutModal" class="modal fade animated rubberBand delete-modal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-            <form id="logoutForm" action="{{ route('logout') }}" method="POST">
-                @csrf
-                <div class="modal-body text-center">
-                    <img src="{{ asset('style_account/images/logo.png') }}" alt="Logo" width="50" height="46">
-                    <h3>Are you sure you want to logout?</h3>
-                    <div class="m-t-20">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-danger">Logout</button>
-                    </div>
+            <div class="modal-body text-center">
+                <img src="{{ asset('style_account/images/logo.png') }}" alt="Logo" width="50" height="46">
+                <h3>Are you sure you want to logout?</h3>
+                <div class="m-t-20">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <a href="{{ route('logout') }}" class="btn btn-danger">Logout</a>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
 </div>
