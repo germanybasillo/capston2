@@ -6,12 +6,17 @@ use App\Http\Controllers\Usertype\Dashboard;
 use App\Http\Controllers\Tenant\TenantLink;
 use App\Http\Controllers\Bed\BedLink;
 use App\Http\Controllers\BedAssign\Assignbed;
+use App\Http\Controllers\Bill\Billlink;
 use App\Http\Controllers\Room\RoomLink;
 use App\Http\Controllers\Suggestion\SuggestionLink;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('page.index');
+});
+
+Route::get('/paymenthistory', function () {
+    return view('payment-history');
 });
 
 Route::get('/login', [LoginRegister::class, 'login'])->name('login');
@@ -24,6 +29,7 @@ Route::get('/index', [LinkController::class, 'index'])->name('index');
 Route::get('/invoice', [LinkController::class, 'invoice'])->name('invoice');
 Route::get('/notice', [LinkController::class, 'notice'])->name('notice');
 Route::get('/sms', [LinkController::class, 'sms'])->name('sms');
+Route::get('/bill', [LinkController::class, 'bill'])->name('bill');
 
 Route::get('/landlord', [Dashboard::class, 'landlord'])->name('landlord');
 Route::get('/tenant', [Dashboard::class, 'tenant'])->name('tenant');
@@ -44,3 +50,6 @@ Route::post('/assign-store', [Assignbed::class, 'store'])->name('assign-store');
 
 Route::resource('/suggestions', SuggestionLink::class);
 Route::post('/suggestion-store', [SuggestionLink::class, 'store'])->name('suggestion-store');
+
+Route::resource('/bills', Billlink::class);
+Route::post('/bill-store', [Billlink::class, 'store'])->name('bill-store');

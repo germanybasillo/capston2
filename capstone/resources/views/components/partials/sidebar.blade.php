@@ -18,39 +18,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a href="/tenants" class="nav-link">
-          <i class="nav-icon fa fa-users"></i>
-          <p>
-              {{_('Tenants Profile')}}
-          </p>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="/rooms" class="nav-link">
-          <i class="nav-icon fa fa-home"></i>
-          <p>
-              {{_('Room Management')}}
-          </p>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="/beds" class="nav-link">
-          <i class="nav-icon fa fa-bed"></i>
-          <p>
-              {{_('Bed Management')}}
-          </p>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="/bed_assigns" class="nav-link">
-          <i class="nav-icon fa fa-bed"></i>
-          <p> 
-              {{_('Room Assignment')}}
-          </p>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="/bill" class="nav-link">
+        <a href="/bills" class="nav-link">
           <i class="nav-icon fa fa-money-bill"></i>
           <p>
               {{_('Utility Bills')}}
@@ -58,15 +26,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a href="/invoice" class="nav-link">
-          <i class="nav-icon fa fa-file-invoice"></i>
-          <p>
-              {{_('Invoice')}}
-          </p>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="/payment-his" class="nav-link">
+        <a href="/paymenthistory" class="nav-link">
           <i class="nav-icon fa fa-file "></i>
           <p>
               {{_('Payment History')}}
@@ -74,18 +34,10 @@
         </a>
       </li>
       <li class="nav-item">
-        <a href="payment" class="nav-link">
+        <a href="/payment" class="nav-link">
           <i class="nav-icon fa fa-file-invoice"></i>
           <p>
               {{_('Payments')}}
-          </p>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="/sms" class="nav-link">
-          <i class="nav-icon fa fa-envelope"></i>
-          <p>
-              {{_('Room Management')}}
           </p>
         </a>
       </li>
@@ -110,7 +62,7 @@
         <a href="/income" class="nav-link">
           <i class="nav-icon fa fa-chart-bar"></i>
           <p>
-              {{_('Room Management')}}
+              {{_('Report')}}
           </p>
         </a>
       </li>

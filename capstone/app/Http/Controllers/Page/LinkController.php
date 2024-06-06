@@ -30,5 +30,5 @@ class LinkController extends Controller
     $tenants = Tenant::all();
      return view("page.sms", compact('tenants'));
  }
-
+ 
 }

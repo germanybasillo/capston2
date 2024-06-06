@@ -20,6 +20,7 @@ class Dashboard extends Controller
     return view("dashboard.landlord", compact('tenants', 'rooms', 'beds'));
 }
   public function tenant(){
+    return view("dashboard.tenant");
     
     }
 }

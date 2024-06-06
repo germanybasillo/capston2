@@ -45,6 +45,14 @@ class Assignbed extends Controller
         return redirect('/assigns')->with('status',"Bed-Management Data Has Been inserted");
     }
 
+    public function destroy($id)
+    {
+      $assign = Assign::find($id);
+      $assign->delete();
+      return redirect("/assigns")
+        ->with('success', 'Bed-Management '.$id.'info deleted successfully');
+    }
+
 
 }
 
