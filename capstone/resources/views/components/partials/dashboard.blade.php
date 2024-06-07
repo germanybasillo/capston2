@@ -1,4 +1,3 @@
-
 @if(Auth::check())
 @if(Auth::user()->usertype === 'landlord')
 <div class="content-wrapper">

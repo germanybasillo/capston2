@@ -10,13 +10,14 @@
                     <x-partials.message/>
                     <h1 style="margin-top: -30px">{{_('ADMIN')}}</h1>
                     <div class="header-left-bottom">
-                        <form>
+                        <form action="{{ route('admin_validate') }}" method="post">
+                            @csrf
                             <div class="icon1">
                                 <x-label for="email" :value="__('Email')" /><x-email/>
-                                <x-input type="email" name="email" :value="old('email')" />
+                                <x-input type="email" name="email" />
                             </div>
                             <div class="icon1">
-                                <x-label for="password" :value="__('Password')" /><x-password-con-password/>
+                                <x-label for="password"/><x-password-con-password/>
                                 <x-input type="password" name="password" />
                             </div>
                             <div class="login-check">
