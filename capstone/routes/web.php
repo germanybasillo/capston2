@@ -1,59 +1,23 @@
 <?php
+require __DIR__.'/admin.php';
+require __DIR__.'/room.php';
+require __DIR__.'/page.php';
+require __DIR__.'/auth.php';
+require __DIR__.'/assign.php';
+require __DIR__.'/bed.php';
+require __DIR__.'/bill.php';
+require __DIR__.'/dashboard.php';
+require __DIR__.'/payment.php';
+require __DIR__.'/suggesion.php';
+require __DIR__.'/tenant.php';
+require __DIR__.'/page.php';
 
-use App\Http\Controllers\Auth\LoginRegister;
-use App\Http\Controllers\Page\LinkController;
-use App\Http\Controllers\Usertype\Dashboard;
-use App\Http\Controllers\Tenant\TenantLink;
-use App\Http\Controllers\Bed\BedLink;
-use App\Http\Controllers\BedAssign\Assignbed;
-use App\Http\Controllers\Bill\Billlink;
-use App\Http\Controllers\Room\RoomLink;
-use App\Http\Controllers\Payment\Paymentlink;
-use App\Http\Controllers\Suggestion\SuggestionLink;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('page.index');
 });
 
-Route::get('/login', [LoginRegister::class, 'login'])->name('login');
-Route::post('/login', [LoginRegister::class, 'validate_login'])->name('validate_login');
-Route::get('/register', [LoginRegister::class, 'register'])->name('register');
-Route::post('/register', [LoginRegister::class, 'validate_register'])->name('validate_register');
-Route::get('/logout',  [LoginRegister::class, 'logout'])->name('logout');
 
-Route::get('/index', [LinkController::class, 'index'])->name('index');
-Route::get('/invoice', [LinkController::class, 'invoice'])->name('invoice');
-Route::get('/notice', [LinkController::class, 'notice'])->name('notice');
-Route::get('/sms', [LinkController::class, 'sms'])->name('sms');
-Route::get('/bill', [LinkController::class, 'bill'])->name('bill');
-Route::get('/income', [LinkController::class, 'income'])->name('income');
-Route::get('/history', [LinkController::class, 'history'])->name('history');
-Route::get('/collect', [LinkController::class, 'collect'])->name('collect');
 
-Route::get('/landlord', [Dashboard::class, 'landlord'])->name('landlord');
-Route::get('/tenant', [Dashboard::class, 'tenant'])->name('tenant');
-
-Route::resource('/tenants', TenantLink::class);
-Route::post('/tenant-store', [TenantLink::class, 'store'])->name('tenant-store');
-Route::put('/tenants/{id}', [TenantLink::class, 'update'])->name('tenants.update');
-
-Route::resource('/rooms', RoomLink::class);
-Route::post('/room-store', [RoomLink::class, 'store'])->name('room-store');
-Route::put('/rooms/{id}', [RoomLink::class, 'update'])->name('rooms.update');
-
-Route::resource('/beds', BedLink::class);
-Route::post('/bed-store', [BedLink::class, 'store'])->name('bed-store');
-
-Route::resource('/assigns', Assignbed::class);
-Route::post('/assign-store', [Assignbed::class, 'store'])->name('assign-store');
-
-Route::resource('/suggestions', SuggestionLink::class);
-Route::post('/suggestion-store', [SuggestionLink::class, 'store'])->name('suggestion-store');
-
-Route::resource('/bills', Billlink::class);
-Route::post('/bill-store', [Billlink::class, 'store'])->name('bill-store');
-
-Route::resource('/payments', Paymentlink::class);
-Route::post('/payment-store', [Paymentlink::class, 'store'])->name('payment-store');
 

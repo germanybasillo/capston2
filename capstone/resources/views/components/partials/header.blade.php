@@ -29,7 +29,7 @@
                 <img src="{{ asset('style_account/images/logo.png') }}" alt="Logo" width="50" height="46">
                 <h3>Are you sure you want to logout?</h3>
                 <div class="m-t-20">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                     <a href="{{ route('logout') }}" class="btn btn-danger">Logout</a>
                 </div>
             </div>
