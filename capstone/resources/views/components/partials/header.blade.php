@@ -14,7 +14,6 @@
   </ul>
   <ul class="navbar-nav ml-auto">
     <li class="nav-item">
-        
       <a class="nav-link logout-btn" href="#" data-toggle="modal" data-target="#logoutModal">
     <i class="fas fa-sign-out-alt"></i>
     </a>
