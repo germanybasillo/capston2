@@ -68,7 +68,7 @@
                   </div></b>
                   <b><div class="form-group">
                     <label>Due Date</label>
-                    <select name="date" id="date" class="form-control">
+                    <select name="date" class="form-control">
                       <option selected disabled>Select Your Due Date</option>
                        @foreach($assigns as $assign)
                       <option value="{{ $assign->due_date }}">{{ $assign->due_date }}</option>
