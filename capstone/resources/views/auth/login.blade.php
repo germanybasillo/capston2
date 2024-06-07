@@ -30,7 +30,7 @@
                                 <button class="btn">{{ __('Log in') }}</button>
                             </div>
                             <div class="links">
-                                <p><a href="#">{{ __('Forgot your password?') }}</a></p>
+                                <p><a href="#">{{ __('Forgot password?') }}</a></p>
                                 <p class="right"><a href="{{ route('register') }}">{{ __('New User? Register') }}</a></p>
                                 <div class="clear"></div>
                             </div>
