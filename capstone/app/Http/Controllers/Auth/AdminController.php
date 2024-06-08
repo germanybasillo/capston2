@@ -12,7 +12,12 @@ class AdminController extends Controller
     {
         return view("auth.admin.login");
     }
-    
+
+    public function dashboard()
+    {
+        return view("dashboard.dashboard");
+    }
+
     public function admin()
     {
         return view("page.admin");
@@ -39,6 +44,6 @@ class AdminController extends Controller
         Auth::guard('admin')->logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect()->route('admin.login');
+        return redirect()->route('admin_login');
     }
 }
