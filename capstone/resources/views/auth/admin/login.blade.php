@@ -17,7 +17,7 @@
                                 <x-input type="email" name="email" />
                             </div>
                             <div class="icon1">
-                                <x-label for="password"/><x-password-con-password/>
+                                <x-label for="password" :value="__('Password')" /><x-password-con-password/>
                                 <x-input type="password" name="password" />
                             </div>
                             <div class="login-check">

@@ -14,6 +14,11 @@ class LinkController extends Controller
         return view("page.index");
     }
 
+    public function admin_home()
+    {
+       return view("page.admin");
+   }
+
     public function invoice()
     {
         $tenants = Tenant::all();
