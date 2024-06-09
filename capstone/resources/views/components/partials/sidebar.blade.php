@@ -21,7 +21,7 @@
         <a href="/tenants" class="nav-link">
           <i class="nav-icon fa fa-users"></i>
           <p>
-            {{_('Your Bills')}} 
+            {{_('Your Info')}} 
           </p>
         </a>
       </li>
@@ -29,7 +29,7 @@
         <a href="/bills" class="nav-link">
           <i class="nav-icon fa fa-money-bill"></i>
           <p>
-              {{_('Utility Bills')}}
+              {{_('Your Bills')}}
           </p>
         </a>
       </li>

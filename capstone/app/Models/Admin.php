@@ -2,11 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as AuthenticatableUser;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Admin extends AuthenticatableUser implements Authenticatable
+class Admin extends Authenticatable
 {
     use HasFactory;
 
@@ -17,3 +16,4 @@ class Admin extends AuthenticatableUser implements Authenticatable
         'password',
     ];
 }
+
