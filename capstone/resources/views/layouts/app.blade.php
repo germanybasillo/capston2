@@ -50,7 +50,7 @@
         {{$slot}}
     </aside>
     </div>
-
+ 
 <!-- jQuery -->
 <script src="../assets/plugins/jquery/jquery.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('date');
             $table->string('proof');
             $table->string('remark');
-            $table->string('status');
+            $table->string('status')->default('pending');
             $table->timestamps();
         });
     }

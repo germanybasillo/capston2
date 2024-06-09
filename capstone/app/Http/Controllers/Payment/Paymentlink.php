@@ -31,7 +31,7 @@ class Paymentlink extends Controller
                 'date' => 'required|string',
                 'proof' => 'required|string',
                 'remark' => 'required|string',
-                'status' => 'required|string'
+                'status'   => 'required|string'          
             ]
         );
         $payment= new Payment($request->all());

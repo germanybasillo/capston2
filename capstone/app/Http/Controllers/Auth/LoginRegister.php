@@ -29,7 +29,7 @@ class LoginRegister extends Controller
     
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
-            $welcomeMessage = 'Welcomeback, ' . ucfirst($user->usertype) . ' ' . $user->name . '!';
+            $welcomeMessage = 'Welcome, ' . ucfirst($user->usertype) . ' ' . $user->name . '!';
     
             return redirect()->route('index')->with('success', $welcomeMessage);
         }

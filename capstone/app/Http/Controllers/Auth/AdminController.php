@@ -15,13 +15,22 @@ class AdminController extends Controller
 
     public function dashboard()
     {
+        if (Auth::guard('admin')->check()) {
         return view("dashboard.dashboard");
+         } else {
+        return redirect()->route('admin_login')->with('error', 'Please login first to access the admin section.');
+    }
     }
 
     public function admin()
-    {
+{
+    if (Auth::guard('admin')->check()) {
         return view("page.admin");
+    } else {
+        return redirect()->route('admin_login')->with('error', 'Please login first to access the admin section.');
     }
+}
+
     public function admin_validate(Request $request)
     {
         $credentials = $request->validate([
@@ -29,7 +38,7 @@ class AdminController extends Controller
             'password' => 'required',
         ]);
     
-        if (Auth::guard('admin')->attempt(['email' => $credentials['email'], 'password' => $credentials['password']])) {
+       if (Auth::guard('admin')->attempt($credentials)) {
             return redirect()->intended('admin');
         }
     

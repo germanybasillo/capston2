@@ -2,7 +2,6 @@
     <x-slot name="header">
         <x-partials.header/>
     </x-slot>
-
     <x-slot name="content">
         <div class="content-wrapper">
             <div class="content-header">
