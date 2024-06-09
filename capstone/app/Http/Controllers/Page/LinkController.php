@@ -55,7 +55,8 @@ class LinkController extends Controller
   {
     $tenants = Tenant::all();
     $rooms = Room::all();
-     return view("page.collectibles", compact('tenants','rooms'));
+    $assigns = Assign::all();
+     return view("page.collectibles", compact('tenants','rooms','assigns'));
     }
  }
 

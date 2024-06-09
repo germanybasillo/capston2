@@ -38,10 +38,11 @@
                            <tbody>
                             @foreach($tenants as $tenant)
                             @foreach($rooms as $room)
+                            @foreach($assigns as $assign)
                              <tr>
                                 <td>{{$tenant->email}}</td>
-                                <td>{{$room->room_no}}</td>
-                                <td>{{$tenant->pay}}</td>
+                                <td>{{$room->number}}</td>
+                                <td>{{$assign->due_date}}</td>
                                 <td>{{$tenant->total}}</td>
                                 <td>{{$tenant->balance}}</td>
                              </tr>
@@ -52,6 +53,7 @@
                                 <td><b>{{$tenant->total}}</b></td>
                                 <td>{{$tenant->collecttoal}}</td>
                              </tr>
+                             @endforeach
                              @endforeach
                              @endforeach
                            </tbody>

@@ -21,7 +21,7 @@
         <a href="/tenants" class="nav-link">
           <i class="nav-icon fa fa-users"></i>
           <p>
-              {{_('Your info')}}
+            {{_('Your Bills')}} 
           </p>
         </a>
       </li>
@@ -74,7 +74,7 @@
       <a href="{{ route('landlord')}}" class="nav-link">
         <i class="nav-icon fa fa-tachometer-alt"></i>
         <p>
-          {{ __('Dashboard') }} ({{$tenants}})
+          {{ __('Dashboard') }}
         </p>
       </a>
     </li>
@@ -91,6 +91,14 @@
         <i class="nav-icon fa fa-home"></i>
         <p>
             {{_('Rooms')}}
+        </p>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="/bills" class="nav-link">
+        <i class="nav-icon fa fa-money-bill"></i>
+        <p>
+            {{_('Utility Bills')}}
         </p>
       </a>
     </li>
