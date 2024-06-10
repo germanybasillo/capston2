@@ -20,6 +20,10 @@ class AdminController extends Controller
 
     public function admin()
     {
+        if (Auth::guard('admin')->check()) {
+            
+            return redirect()->route('admin_login');
+        }
 
         return view("page.admin");
     }

@@ -18,7 +18,7 @@ class RedirectIfAdminAuthenticated
     {
         if (Auth::guard('admin')->check()) {
             
-            return redirect()->route('admin');
+            return redirect()->route('admin_login');
         }
 
         return $next($request);
